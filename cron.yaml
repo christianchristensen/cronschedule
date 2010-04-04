@@ -1,4 +1,4 @@
 cron:
-- description: hourly callback
-  url: /tasks/summary
-  schedule: every 1 hour
+- description: five min callback
+  url: /tasks/croncallback
+  schedule: every 5 minutes

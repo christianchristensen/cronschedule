@@ -4,25 +4,30 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /assets
-  static_dir: assets
+- url: /favicon.ico
+  static_files: images/favicon.ico
+  upload: images/favicon.ico      
+    
+- url: /stylesheets
+  static_dir: stylesheets
+  
+- url: /images
+  static_dir: images
+ 
+- url: /javascripts
+  static_dir: javascripts   
 
-- url: /css
-  static_dir: css
-
-- url: /js
-  static_dir: js
-
-- url: /development-bundle
-  static_dir: development-bundle
-
+- url: /html
+  static_dir: html
+  
 - url: /tasks/croncallback
-  script: croncallback.py
+  script: app.py
   login: admin
-  
+
 - url: /managecron
-  script: managecron.py
+  script: app.py
   login: required
-  
-- url: .*
-  script: cronschedule.py
+
+- url: /*
+  script: app.py
+  login: required
