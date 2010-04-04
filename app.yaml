@@ -1,0 +1,28 @@
+application: cronschedule
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /assets
+  static_dir: assets
+
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /development-bundle
+  static_dir: development-bundle
+
+- url: /tasks/croncallback
+  script: croncallback.py
+  login: admin
+  
+- url: /managecron
+  script: managecron.py
+  login: required
+  
+- url: .*
+  script: cronschedule.py

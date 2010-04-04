@@ -1,0 +1,4 @@
+cron:
+- description: hourly callback
+  url: /tasks/summary
+  schedule: every 1 hour
