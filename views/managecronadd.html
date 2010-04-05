@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ page_title}}
+{% endblock %}
+
+{% block content %}
+<div>
+{{ page_content }}
+  <form action="/managecron" method="post">
+    <div><textarea name="content" rows="3" cols="60"></textarea></div>
+    <div><input type="submit" value="Add"></div>
+  </form>
+</div>
+{% endblock %}

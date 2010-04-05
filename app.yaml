@@ -28,6 +28,10 @@ handlers:
   script: app.py
   login: required
 
+- url: /managecron/*
+  script: app.py
+  login: required
+
 - url: /*
   script: app.py
   login: required
